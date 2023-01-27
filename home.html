@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Лошадки</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="floatingPanel">
+        <div class="article">
+
+        </div>
+    </div>
+    <div class="main">
+        
+        <details>
+            <summary>Аннотация</summary>
+            Веб-приложение для людей, которые занимаются верховой ездой и хотят узнать больше
+об этом виде спорта. Приложение будет представлять из себя платформу для отображения
+статей на тему верховой езды. Планируется реализовать детальный фильтр для
+поиска статей, интересующих пользователя, а также возможность пометки статьи как
+прочитанной и добавления ее в список для прочтения. Приложение предназначено для 
+новичков в мире верховой езды и для продвинутых спортсменов.
+        </details>
+        <details>
+            <summary>Варианты использования</summary>
+            <p>1. Отображение списка статей на главной странице (без установленных
+фильтров). Отображение картинки статьи, ее названия, короткого описания.</p>
+            <p>2. Применение параметров для фильтрации статей:</p>
+            <p style="margin-left: 25px;">a. отобразить статьи, включающие выбранный тег</p>
+            <p style="margin-left: 25px;">     b. отобразить статьи с выбранным уровнем сложности</p>
+            <p style="margin-left: 25px;">     c. отобразить статьи, посвященные только определенному виду конного
+            спорта</p>
+            <p style="margin-left: 25px;">     d. скрыть прочитанные статьи</p>
+            <p style="margin-left: 25px;">     e. показать только статьи из списка 
+            "прочитать позже"</p>
+            <p>3. Переход на страницу статьи, отображение ее содержания - название, дата
+            написания, изображение, текст статьи.</p>
+            <p>4. Добавить статью в список для прочтения</p>
+            <p>5. Пометить статью, как прочитанную</p>
+        </details>
+        <details>
+            <summary>Сценарии взаимодейстия</summary>
+            <p>П - пользователь</p>
+            <p>ВП - веб-приложение</p>
+            <br>
+            <p style="font-weight: bold;">Просмотр всех статей:</p>
+            <p style="margin-left: 25px;">1. П запускает ВП в браузере</p>
+            <p style="margin-left: 25px;">2. ВП отображает все статьи (с 
+                картинкой, названием и описанием) в порядке их публикации</p>
+            <br>
+            <p style="font-weight: bold;">Применение фильтра по выбранным тегам:</p>
+            <p style="margin-left: 25px;">1. П отмечает нужные теги (один 
+            или несколько) в окне выбора фильтров</p> 
+            <p style="margin-left: 25px;">2. П нажимает кнопку "Применить фильтры"</p> 
+            <p style="margin-left: 25px;">3. ВП ищет среди всех статей те, которые содержат 
+                все указанные теги</p>
+            <p style="margin-left: 25px;">4. ВП отображает статьи с выбранными тегами</p>
+            <br>
+            <p style="font-weight: bold;">Применение фильтра по уровню сложности:</p>
+            <p style="margin-left: 25px;">1. П передвигает ползунок уровня сложности 
+                в окне выбора фильтров</p> 
+            <p style="margin-left: 25px;">2. П нажимает кнопку "Применить фильтры"</p> 
+            <p style="margin-left: 25px;">3. ВП ищет среди всех статей те, которые имеют 
+            выбранный уровень сложности</p>
+            <p style="margin-left: 25px;">4. ВП отображает статьи с выбранным уровнем 
+            сложности</p>    
+            <br>
+            <p style="font-weight: bold;">Применение фильтра по виду спорта:</p>
+            <p style="margin-left: 25px;">1. П отмечает нужные виды спорта (один или 
+                несколько) в окне выбора фильтров</p> 
+            <p style="margin-left: 25px;">2. П нажимает кнопку "Применить фильтры"</p> 
+            <p style="margin-left: 25px;">3. ВП ищет среди всех статей те, которые 
+            относятся к одному из выбранных видов спорта</p>
+            <p style="margin-left: 25px;">4. ВП отображает статьи с выбранными видами 
+            спорта</p> 
+            <br>
+            <p style="font-weight: bold;">Скрытие прочитанных статей:</p>
+            <p style="margin-left: 25px;">1. П ставит галочку в чекере "скрыть 
+                прочитанные статьи" в окне выбора фильтров</p> 
+            <p style="margin-left: 25px;">2. П нажимает кнопку "Применить фильтры"</p> 
+            <p style="margin-left: 25px;">3. ВП получает список статей, которые 
+            находятся в списке прочитанных статей П</p>
+            <p style="margin-left: 25px;">4. ВП ищет среди всех статей те, которые не 
+            находятся в списке прочитанных статей П</p>
+            <p style="margin-left: 25px;">5. ВП отображает статьи из п. 4</p>
+            <br>
+            <p style="font-weight: bold;">Отображение статей из списка "прочитать позже":</p>
+            <p style="margin-left: 25px;">1. П ставит галочку в чекере "показать 
+                только статьи из "прочесть позже"" в окне выбора фильтров</p> 
+            <p style="margin-left: 25px;">2. П нажимает кнопку "Применить фильтры"</p> 
+            <p style="margin-left: 25px;">3. ВП получает список статей, которые 
+            находятся в списке статей "прочитать позже" у П</p>
+            <p style="margin-left: 25px;">4. ВП отображает статьи из п. 3</p>
+            <br>
+            <p style="font-weight: bold;">Открытие статьи:</p>
+            <p style="margin-left: 25px;">1. П нажимает на окно с выбранной статьей</p> 
+            <p style="margin-left: 25px;">2. ВП отображает окно со статьей</p> 
+            <p style="margin-left: 25px;">3. ВП отображает в окне статьи картинку, 
+            название, текст статьи, дату ее добавления и кнопки "Пометить как 
+        прочитанное"/"Удалить из прочитанных" и "Добавить в прочесть позже"/
+        "Удалить из списка для прочтения"</p>
+        <br>
+            <p style="font-weight: bold;">Закрытие статьи:</p>
+            <p style="margin-left: 25px;">1. П нажимает на область вокруг окна с 
+            открытой статьей</p> 
+            <p style="margin-left: 25px;">2. ВП скрывает окно со статьей</p> 
+            <p style="margin-left: 25px;">3. ВП отображает список статей (всех 
+            или с применением филтров) с того места, на котором П открыл закрыту статью</p>
+            <br>
+            <p style="font-weight: bold;">Добавление статьи в список прочитанного:</p>
+            <p style="margin-left: 25px;">1. П открывает статью (раздел "открытие 
+            статьи")</p> 
+            <p style="margin-left: 25px;">2. П нажимает на кнопку "Пометить как 
+                прочитанное"</p> 
+            <p style="margin-left: 25px;">3. ВП добавляет номер статьи в список статей,
+             прочитанных П</p>
+             <p style="margin-left: 25px;">4. ВП заменяет в выбранной статье кнопку 
+                "Пометить как прочитанное" на кнопку "Удалить из прочитанных"</p>
+            <p style="margin-left: 25px;">5. ВП обновляет список отображаемых статей 
+            в соответствии с заданными фильтрами</p> 
+            <br>
+            <p style="font-weight: bold;">Удаление статьи из списка прочитанного:</p>
+            <p style="margin-left: 25px;">1. П открывает статью (раздел "открытие 
+            статьи")</p> 
+            <p style="margin-left: 25px;">2. П нажимает на кнопку "Удалить из прочитанных"</p> 
+            <p style="margin-left: 25px;">3. ВП удаляет номер статьи из списка статей,
+             прочитанных П</p>
+             <p style="margin-left: 25px;">4. ВП заменяет в выбранной статье кнопку 
+                "Удалить из прочитанных" на кнопку "Пометить как прочитанное"</p>
+            <br>
+            <p style="font-weight: bold;">Добавление статьи в список "прочитать позже":</p>
+            <p style="margin-left: 25px;">1. П открывает статью (раздел "открытие 
+            статьи")</p> 
+            <p style="margin-left: 25px;">2. П нажимает на кнопку "Добавить в прочесть позже"</p> 
+            <p style="margin-left: 25px;">3. ВП добавляет номер статьи в список 
+                статей для прочтения П</p>
+             <p style="margin-left: 25px;">4. ВП заменяет в выбранной статье кнопку 
+                "Добавить в прочесть позже" на кнопку "Удалить из списка для 
+                прочтения"</p>
+            <br>
+            <p style="font-weight: bold;">Удаление статьи из списка "прочитать позже":</p>
+            <p style="margin-left: 25px;">1. П открывает статью (раздел "открытие 
+            статьи")</p> 
+            <p style="margin-left: 25px;">2. П нажимает на кнопку "Удалить из списка для 
+                прочтения"</p> 
+            <p style="margin-left: 25px;">3. ВП удаляет номер статьи из списка 
+                статей для прочтения П</p>
+            <p style="margin-left: 25px;">4. ВП заменяет в выбранной статье кнопку 
+               "Удалить из списка для прочтения" на кнопку "Добавить в 
+               прочесть позже"</p>
+            <p style="margin-left: 25px;">5. ВП обновляет список отображаемых статей 
+                в соответствии с заданными фильтрами</p> 
+        </details>
+        <details>
+            <summary>Сценарии выполнения</summary>
+            <p>При запуске веб-приложения сразу выполняется метод loadPosts(data)</p>
+            <p style="font-weight: bold;">loadPosts(data)</p>
+            <p style="margin-left: 25px;">addPostsListeners()</p>
+            <p style="margin-left: 40px;">- findPost(id) //id - id-номер статьи</p>
+            <p style="margin-left: 40px;">- timeConverter(iso) //iso - время 
+                создания статьи в формате ISO</p>
+            <p style="margin-left: 40px;">- isReadContains(id) //id - id-номер 
+                статьи</p>
+            <p style="margin-left: 40px;">- readLaterContains(id) //id - id-номер 
+                статьи</p>
+            <br>
+            <p style="font-weight: bold;">button.filterApply.onclick</p>
+            <p style="margin-left: 25px;">filterApply()</p>
+            <p style="margin-left: 40px;">- getRead()</p>
+            <p style="margin-left: 40px;">- getReadLater()</p>
+            <p style="margin-left: 40px;">- loadPosts(dataToShow) //dataToShow - 
+            статьи, подходящие под все фильтры</p>
+            <br>
+            <p style="font-weight: bold;">button.filterReset.onclick</p>
+            <p style="margin-left: 25px;">filterReset()</p>
+            <p style="margin-left: 40px;">- loadPosts(data) //data - все статьи</p>
+            <br>
+            <p>floatingPanel ждет нажатия на себя (это может произойти только 
+                когда открыта статья) и выполняет прописанную функцию - скрывает статью
+            </p>
+            <p style="font-weight: bold;">floatingPanel.onclick</p>
+            <p style="margin-left: 25px;">addEventListener</p>
+            <br>
+            <p style="font-weight: bold;">slider.oninput</p>
+            <p style="margin-left: 25px;">slider()</p>
+            <br>
+            <p style="font-weight: bold;">button.readButton.onclick</p>
+            <p style="margin-left: 25px;">toggleRead(id) //id - номер статьи</p>
+            <p style="margin-left: 40px;">- isReadContains(id) //id - номер статьи</p>
+            <p style="margin-left: 40px;">- isReadAdd(id) //id - номер статьи</p>
+            <p style="margin-left: 40px;">- isReadDelete(id) //id - номер статьи</p>
+            <br>
+            <p style="font-weight: bold;">button.readLaterButton.onclick</p>
+            <p style="margin-left: 25px;">toggleReadLater(id) //id - номер статьи</p>
+            <p style="margin-left: 40px;">- readLaterContains(id) //id - номер статьи</p>
+            <p style="margin-left: 40px;">- readLaterAdd(id) //id - номер статьи</p>
+            <p style="margin-left: 40px;">- readLaterDelete(id) //id - номер статьи</p>
+        </details>
+
+        <div class="filter">
+            <p class="levelTitle">Уровень сложности:</p>
+            <input type="range" min="0" max="3" value="0" class="slider" id="levelSlider" oninput="slider()">
+            <span id="levelText">Все статьи</span><br>
+
+            <div class="sportKindFilter"></div>
+
+            <div class="tagsTitle">Теги:</div>
+            <div class="tags"></div>
+
+            <label for="accept">
+                <input type="checkbox" id="hideRead" name="hideRead" value="yes">
+                скрыть прочитанные статьи
+            </label>
+            <br>
+            <label for="accept">
+                <input type="checkbox" id="showReadLater" name="showReadLater" value="yes">
+                показать только статьи из "прочесть позже"
+            </label>
+            <br>
+
+            <button class="filterApply" onclick="filterApply()">Применить фильтры</button>
+            <button class="filterReset" onclick="filterReset()">Сбросить</button>
+        </div>
+    </div>
+
+  <script src="script.js"></script>
+
+  <script>
+
+    let scrollTo = 0;
+    let floatingPanel = document.querySelector(".floatingPanel")
+
+    loadPosts(data)
+
+    // добавление event listener к floatingPanel, чтобы при нажатии закрывалась открытая статья
+    floatingPanel.addEventListener("click", e => {
+        if (e.target.className != "floatingPanel") return
+
+        floatingPanel.style.opacity = "0"
+        floatingPanel.style.pointerEvents = "none"
+
+        document.querySelector(".main").style.maxHeight = null
+        document.querySelector(".main").style.overflow = null
+        window.scrollTo(0, scrollTo)
+    })
+
+    // создание кнопок с видами спорта для фильтра и добавление event listener
+    let sportKindFilter = document.querySelector(".sportKindFilter")
+    let sportKinds = ["Выездка", "Конкур", "Скачки", "Вестерн"]
+    sportKinds.forEach(kind => {
+        var div = document.createElement('div');
+        div.className = "sportButton"
+        div.innerHTML = kind
+
+        div.addEventListener("click", e => {
+            if(e.target.classList.contains("sportActive")){
+                e.target.classList.remove("sportActive")
+            } else {
+                e.target.classList.add("sportActive")
+            }
+        })
+
+        sportKindFilter.appendChild(div)
+    })
+
+     // создание кнопок с тегами для фильтра и добавление event listener
+    let tagsFilter = document.querySelector(".tags")
+    tags.forEach(tag => {
+        var div = document.createElement('div');
+        div.className = "tag"
+        div.innerHTML = tag
+
+        div.addEventListener("click", e => {
+            if(e.target.classList.contains("tagActive")){
+                e.target.classList.remove("tagActive")
+            } else {
+                e.target.classList.add("tagActive")
+            }
+        })
+
+        tagsFilter.appendChild(div)
+    })
+
+
+  </script>
+</body>
+</html>
