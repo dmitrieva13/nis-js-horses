@@ -217,6 +217,9 @@ const readLaterDelete = id => {
 // проверка наличия статьи в списке "прочитать позже"
 const readLaterContains = id => {
     let idStr = '{' + id + '}'
+    if (!localStorage.getItem('readLater')) {
+        localStorage.readLater = ""
+    }
     return localStorage.getItem('readLater').includes(idStr)
 }
 
@@ -238,6 +241,9 @@ const isReadDelete = id => {
 // проверка наличия статьи в списке прочитанных
 const isReadContains = id => {
     let idStr = '{' + id + '}'
+    if (!localStorage.getItem('isRead')) {
+        localStorage.isRead = ""
+    }
     return localStorage.getItem('isRead').includes(idStr)
 }
 
