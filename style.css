@@ -98,6 +98,11 @@
     padding: 15px 7px 10px 7px;
 }
 
+.articleText {
+    padding: 10px;
+    text-align: justify;
+}
+
 .articleDate {
     text-align: right;
     font-weight: lighter;
@@ -240,21 +245,22 @@
     border-color: red;
 }
 
-.readButton {
+.readButton, .readLaterButton, .downloadButton {
     padding: 3px;
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
-.readLaterButton {
+/* .readLaterButton {
     padding: 3px;
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 15px;
-}
+} */
 
 #hideRead {
     margin-top: 15px;
@@ -272,4 +278,21 @@ summary {
 
 details {
     padding: 10px;
+}
+
+.sorting {
+    width: 75%;
+    margin-left: 100px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+    justify-content: flex-end;
+}
+
+.sortingNewToOld, .sortingOldToNew, .sortingRandom {
+    cursor: pointer;
+    color: rgb(15, 15, 85);
 }

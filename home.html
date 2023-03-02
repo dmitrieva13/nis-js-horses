@@ -23,6 +23,7 @@
 прочитанной и добавления ее в список для прочтения. Приложение предназначено для 
 новичков в мире верховой езды и для продвинутых спортсменов.
         </details>
+
         <details>
             <summary>Варианты использования</summary>
             <p>1. Отображение списка статей на главной странице (без установленных
@@ -39,7 +40,13 @@
             написания, изображение, текст статьи.</p>
             <p>4. Добавить статью в список для прочтения</p>
             <p>5. Пометить статью, как прочитанную</p>
+            <p>6. Скачать текст статьи в формате txt</p>
+            <p>7. Сортировка статей:</p>
+            <p style="margin-left: 25px;">a. показать сначала новые статьи</p>
+            <p style="margin-left: 25px;">b. показать сначала старые статьи</p>
+            <p style="margin-left: 25px;">c. показать статьи в случайном порядке</p>
         </details>
+
         <details>
             <summary>Сценарии взаимодейстия</summary>
             <p>П - пользователь</p>
@@ -152,7 +159,39 @@
                прочесть позже"</p>
             <p style="margin-left: 25px;">5. ВП обновляет список отображаемых статей 
                 в соответствии с заданными фильтрами</p> 
+            <br>
+            <p style="font-weight: bold;">Скачивание статьи:</p>
+            <p style="margin-left: 25px;">1. П открывает статью (раздел "открытие 
+            статьи")</p> 
+            <p style="margin-left: 25px;">2. П нажимает на кнопку "Скачать"</p> 
+            <p style="margin-left: 25px;">3. ВП создает элемент, содержащий ссылку на 
+                скачивание txt-файла с текстом статьи</p>
+            <p style="margin-left: 25px;">4. ВП кликает на созданный элемент, запуская 
+            скачивание</p>
+            <p style="margin-left: 25px;">5. ВП удаляет созданный элемент</p>
+            <br>
+            <p style="font-weight: bold;">Сортировка статей от новых к старым:</p>
+            <p style="margin-left: 25px;">1. П нажимает на кнопку "сначала новые"</p> 
+            <p style="margin-left: 25px;">2. ВП сортирует отображаемые статьи по дате 
+                написания (от новых к старым)</p> 
+            <p style="margin-left: 25px;">3. ВП обновляет список отображаемых статей в 
+                соответствии с сортировкой</p>
+            <br>
+            <p style="font-weight: bold;">Сортировка статей от старых к новым:</p>
+            <p style="margin-left: 25px;">1. П нажимает на кнопку "сначала старые"</p> 
+            <p style="margin-left: 25px;">2. ВП сортирует отображаемые статьи по дате 
+                написания (от старых к новым)</p> 
+            <p style="margin-left: 25px;">3. ВП обновляет список отображаемых статей в 
+                соответствии с сортировкой</p>
+            <br>
+            <p style="font-weight: bold;">Сортировка статей в случайном порядке:</p>
+            <p style="margin-left: 25px;">1. П нажимает на кнопку "случайный порядок"</p> 
+            <p style="margin-left: 25px;">2. ВП сортирует отображаемые статьи в случайном 
+            порядке</p> 
+            <p style="margin-left: 25px;">3. ВП обновляет список отображаемых статей в 
+                соответствии с сортировкой</p>
         </details>
+
         <details>
             <summary>Сценарии выполнения</summary>
             <p>При запуске веб-приложения сразу выполняется метод loadPosts(data)</p>
@@ -197,6 +236,25 @@
             <p style="margin-left: 40px;">- readLaterContains(id) //id - номер статьи</p>
             <p style="margin-left: 40px;">- readLaterAdd(id) //id - номер статьи</p>
             <p style="margin-left: 40px;">- readLaterDelete(id) //id - номер статьи</p>
+            <br>
+            <p style="font-weight: bold;">button.downloadButton.onclick</p>
+            <p style="margin-left: 25px;">download(filename, filedata) //filename - имя файла, filedata - содержимое файла</p>
+            <br>
+            <p style="font-weight: bold;">sortingNewToOld.onclick</p>
+            <p style="margin-left: 25px;">sortNewToOld() </p>
+            <p style="margin-left: 40px;">- loadPosts(dataToShow) //dataToShow - 
+                статьи, подходящие под фильтры (если есть) и отсортированные в нужном порядке</p>
+            <br>
+            <p style="font-weight: bold;">sortingOldToNew.onclick</p>
+            <p style="margin-left: 25px;">sortOldToNew() </p>
+            <p style="margin-left: 40px;">- loadPosts(dataToShow) //dataToShow - 
+                статьи, подходящие под фильтры (если есть) и отсортированные в нужном порядке</p>
+            <br>
+            <p style="font-weight: bold;">sortingRandom.onclick</p>
+            <p style="margin-left: 25px;">sortRandom() </p>
+            <p style="margin-left: 40px;">- loadPosts(dataToShow) //dataToShow - 
+                статьи, подходящие под фильтры (если есть) и отсортированные в случайном порядке</p>
+            <br>
         </details>
 
         <div class="filter">
@@ -222,6 +280,12 @@
 
             <button class="filterApply" onclick="filterApply()">Применить фильтры</button>
             <button class="filterReset" onclick="filterReset()">Сбросить</button>
+        </div>
+
+        <div class="sorting">
+            <div class="sortingNewToOld" onclick="sortNewToOld()">сначала новые</div>
+            <div class="sortingOldToNew" onclick="sortOldToNew()">сначала старые</div>
+            <div class="sortingRandom" onclick="sortRandom()">случайный порядок</div>
         </div>
     </div>
 
